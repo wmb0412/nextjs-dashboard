@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
- 
+
 export const authConfig = {
   pages: {
     signIn: '/login',
@@ -16,6 +16,10 @@ export const authConfig = {
       }
       return true;
     },
+    signIn() {
+      const callbackUrl = process.env.NEXTAUTH_URL || 'https://nextjs-dashboard-wmb0412.vercel.app';
+      return `${callbackUrl}/dashboard`;
+    },
   },
-  providers: [], // Add providers with an empty array for now
+  providers: [],
 } satisfies NextAuthConfig;
