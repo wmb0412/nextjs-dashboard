@@ -1,4 +1,4 @@
-import type { NextAuthConfig } from 'next-auth';
+import type { NextAuthConfig, User } from 'next-auth';
 
 export const authConfig = {
   pages: {
@@ -16,10 +16,10 @@ export const authConfig = {
       }
       return true;
     },
-    signIn() {
-      const callbackUrl = process.env.NEXTAUTH_URL || 'https://nextjs-dashboard-wmb0412.vercel.app';
+     signIn() {
+      const callbackUrl =  process.env.NEXTAUTH_URL || 'https://nextjs-dashboard-wmb0412.vercel.app';
       return `${callbackUrl}/dashboard`;
     },
   },
   providers: [],
-} satisfies NextAuthConfig;
+} as any as NextAuthConfig;
