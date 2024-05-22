@@ -16,10 +16,6 @@ export const authConfig = {
       }
       return true;
     },
-    redirect() {
-      const callbackUrl =  process.env.NEXTAUTH_URL || 'https://nextjs-dashboard-wmb0412.vercel.app';
-      return `${callbackUrl}/dashboard`;
-    },
   },
   providers: [],
 } as NextAuthConfig;
